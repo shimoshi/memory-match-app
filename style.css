@@ -128,8 +128,7 @@ img {
 
 #hero {
     position: fixed;
-    height: 500px;
-    width: auto;
-    left: 50px;
+    height: auto;
+    width: 18vw;
     bottom: 0;
 }

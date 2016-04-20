@@ -7,6 +7,7 @@ var second_card_clicked = null;
 var total_possible_matches = 9;
 var match_counter = 0;
 //global variables for stats
+var matches = 0;
 var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
@@ -45,64 +46,42 @@ function card_clicked(clicked) {
         error.play();
     }
 }
-//dan start
-//define function to flip the cards down
+function flip_down() {
+    first_card_clicked.toggle();
+    second_card_clicked.toggle();
+    first_card_clicked = null;
+    second_card_clicked = null;
+    accuracy = (matches / attempts) * 100 + "%";
+    display_stats();
+}
 
-    //toggle the first card clicked
+function matched() {
+    ++match_counter;
+    ++matches;
+    first_card_clicked = null;
+    second_card_clicked = null;
+    accuracy = (matches / attempts) * 100 + "%";
+    display_stats();
+    well_played.play();
+}
 
-    //toggle the second card clicked
+function display_stats() {
+    $('.games-played .value').text(games_played);
+    $('.attempts .value').text(attempts);
+    $('.accuracy .value').text(accuracy);
+}
 
-    //set the first card clicked to null
+function reset_stats() {
+    match_counter = 0;
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    first_card_clicked = null;
+    second_card_clicked = null;
+    display_stats();
+    start.play();
+}
 
-    //set the second card clicked to null
-
-    //assign a new accuracy by dividing the number of matches by the number of attempts
-
-    //display the stats to the user
-
-
-//define function to execute what happens when two cards are matched
-
-    //increase the match counter by 1
-
-    //set the first card clicked to null
-
-    //set the second card clicked to null
-
-    //assign a new accuracy by dividing the number of matches by the number of attempts
-
-    //display the stats to the user
-
-    //play a sound that represents the user has won
-
-
-//define function to display the user's stats
-
-    //show the amount of games the user has played
-
-    //show the amount of attempts the user has made
-
-    //show the user's accuracy
-
-
-// define function to reset the stats of the player
-
-    //set the number of matches to 0
-
-    //set the accuracy to 0
-
-    //set the number of attempts to 0
-
-    //set the first card clicked to null
-
-    //set the second card clicked to null
-
-    //display the stats to the user
-
-    //play a sound that represents a game has started
-
-
-// dan end
 $(document).ready(function () {
     reset_stats();
     start.play();
