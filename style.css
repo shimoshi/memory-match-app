@@ -1,0 +1,135 @@
+
+body {
+    margin: 0;
+    background-image: url("http://www.wallpaperup.com/uploads/wallpapers/2014/01/05/215902/5312b82d7be16196bcfadb35e1226f6b.jpg");
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: left top;
+    background-size: 100% 100%;
+    position: absolute;
+    color: white;
+    font-family: Georgia;
+}
+
+header {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+header div {
+    display: inline-block;
+    position: absolute;
+    font-size: 35px;
+    padding: 0;
+    margin: 0;
+    top: 30%;
+    left: 45%;
+}
+
+header img {
+    position: relative;
+    float: left;
+    height: 90%;
+    width: auto;
+}
+
+header ul {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 10px 15px;
+}
+
+header ul li {
+    list-style: none;
+    margin: 12px 3px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header ul li a:hover {
+    color: gold;
+}
+
+nav {
+    display: inline-block;
+    position: relative;
+    height: 380px;
+    width: 20vw;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+nav h1 {
+    position: relative;
+    font-size: 40px;
+    margin: 0 0 0 30px;
+}
+
+nav div {
+    color: white;
+}
+
+#stats div {
+    margin: 20px 15px;
+}
+
+#game-area {
+    display: inline-block;
+    position: relative;
+    width: 80vw;
+    float: right;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    margin: 1.5vh 1.4vw;
+    height: 25vh;
+    width: 10vw;
+
+}
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+button {
+    margin-left: 10%;
+    font-size: 20px;
+    height: 45px;
+    width: 80%;
+    background-color: darkgoldenrod;
+    border-style: none;
+}
+
+button:hover {
+    background-color: gold;
+}
+
+img {
+    height: inherit;
+    width: inherit;
+}
+
+#winner {
+    top: 50%;
+    left: 50%;
+}
+
+#hero {
+    position: fixed;
+    height: 500px;
+    width: auto;
+    left: 50px;
+    bottom: 0;
+}
