@@ -18,6 +18,37 @@ var error = new Audio("\/\/wow.zamimg.com\/hearthhead\/sounds\/VO_HERO_05_ERROR1
 var start = new Audio("\/\/wow.zamimg.com\/hearthhead\/sounds\/VO_HERO_05_Start_09.mp3");
 var complete = new Audio("\/\/wow.zamimg.com\/hearthhead\/sounds\/VO_HERO_05_Concede_07.mp3");
 
+//array of card objects
+var cards = [
+    {class: "hunter", card_front: "pictures/hunter.png", card_back: "pictures/cardback.png"},
+    {class: "hunter", card_front: "pictures/hunterhp.png", card_back: "pictures/cardback.png"},
+    {class: "mage", card_front: "pictures/mage.png", card_back: "pictures/cardback.png"},
+    {class: "mage", card_front: "pictures/magehp.png", card_back: "pictures/cardback.png"},
+    {class: "druid", card_front: "pictures/druid.png", card_back: "pictures/cardback.png"},
+    {class: "druid", card_front: "pictures/druidhp.png", card_back: "pictures/cardback.png"},
+    {class: "shaman", card_front: "pictures/shaman.png", card_back: "pictures/cardback.png"},
+    {class: "shaman", card_front: "pictures/shamanhp.png", card_back: "pictures/cardback.png"},
+    {class: "warrior", card_front: "pictures/warrior.png", card_back: "pictures/cardback.png"},
+    {class: "warrior", card_front: "pictures/warriorhp.png", card_back: "pictures/cardback.png"},
+    {class: "priest", card_front: "pictures/priest.png", card_back: "pictures/cardback.png"},
+    {class: "priest", card_front: "pictures/priesthp.png", card_back: "pictures/cardback.png"},
+    {class: "rogue", card_front: "pictures/rogue.png", card_back: "pictures/cardback.png"},
+    {class: "rogue", card_front: "pictures/roguehp.png", card_back: "pictures/cardback.png"},
+    {class: "paladin", card_front: "pictures/paladin.png", card_back: "pictures/cardback.png"},
+    {class: "paladin", card_front: "pictures/paladinhp.png", card_back: "pictures/cardback.png"},
+    {class: "warlock", card_front: "pictures/warlock.png", card_back: "pictures/cardback.png"},
+    {class: "warlock", card_front: "pictures/warlockhp.png", card_back: "pictures/cardback.png"},
+];
+
+function board_init() {
+    for (var i = 0; i < cards.length; i++) {
+        var card = $('<img>', {
+            src: cards.card_front
+        });
+        $("#game-area").append()
+    }
+}
+
 function card_clicked(clicked) {
     if (first_card_clicked == null) {
         clicked.toggle();
@@ -84,9 +115,10 @@ function reset_stats() {
 
 $(document).ready(function () {
     reset_stats();
+    board_init();
     start.play();
     $('.card').on('click', '.back', function () {
-            card_clicked($(this));
+        card_clicked($(this));
     });
     $('button').on('click', function () {
         ++games_played;
