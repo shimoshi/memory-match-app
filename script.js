@@ -41,11 +41,21 @@ var cards = [
 ];
 
 function board_init() {
-    for (var i = 0; i < cards.length; i++) {
-        var card = $('<img>', {
-            src: cards.card_front
+    for(var i = 0; i < cards.length; i++) {
+        var card = $('<div>', {
+            class: 'card'
         });
-        $("#game-area").append()
+        var front = $('<img>', {
+            src: cards[i].card_front,
+            class: 'front'
+        });
+        var back = $('<img>', {
+            src: cards[i].card_back,
+            class: 'back'
+        });
+        $(card).append(front, back);
+        console.log(card);
+        $("#game-area").append(card);
     }
 }
 
